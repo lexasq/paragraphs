@@ -1,5 +1,5 @@
 export interface Observer {
-    update(subject: Subject): void;
+    triggerViewUpdate(subject: Subject): void;
 }
 
 export interface Subject {

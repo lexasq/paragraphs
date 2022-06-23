@@ -14,6 +14,16 @@ export class ParagraphsController implements Subject {
         this.state = state;
     }
 
+    private static replaceAt(array: Paragraph[], index: number, value: Paragraph): Paragraph[] {
+        const ret = array.slice(0);
+        ret[index] = value;
+        return ret;
+    }
+
+    private getItemIndexById(id: string): number {
+        return this.state.findIndex(item => item.id === id)
+    }
+
     public getState(): Paragraph[] {
         return this.state;
     }
@@ -31,17 +41,7 @@ export class ParagraphsController implements Subject {
 
     public update(id: string, p: Paragraph): void {
         const updateIndex = this.getItemIndexById(id);
-        this.state = this.replaceAt(this.state, updateIndex, p)
-    }
-
-    public replaceAt(array, index, value): Paragraph[] {
-        const ret = array.slice(0);
-        ret[index] = value;
-        return ret;
-    }
-
-    public getItemIndexById(id: string): number {
-        return this.state.findIndex(item => item.id === id)
+        this.state = ParagraphsController.replaceAt(this.state, updateIndex, p)
     }
 
     public saveStateSnapshot(): Memento {
@@ -72,7 +72,7 @@ export class ParagraphsController implements Subject {
 
     public notify(): void {
         for (const observer of this.observers) {
-            observer.update(this);
+            observer.triggerViewUpdate(this);
         }
     }
 }
