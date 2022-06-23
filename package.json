@@ -1,0 +1,21 @@
+{
+  "name": "stripo-test",
+  "version": "1.0.0",
+  "description": "simple typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open"
+  },
+  "keywords": [],
+  "author": "Huang Qi",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "latest",
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
+  }
+}
