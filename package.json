@@ -1,5 +1,5 @@
 {
-  "name": "stripo-test",
+  "name": "paragraphs",
   "version": "1.0.0",
   "description": "simple typescript",
   "main": "index.js",
@@ -8,8 +8,6 @@
     "start": "webpack serve --open"
   },
   "keywords": [],
-  "author": "Huang Qi",
-  "license": "MIT",
   "devDependencies": {
     "html-webpack-plugin": "latest",
     "ts-loader": "latest",
