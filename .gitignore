@@ -44,6 +44,5 @@ package-lock.json
 # awesome-typescript
 .awcache
 
-
 # IDE
 .idea
